@@ -10,6 +10,6 @@
         <title>{$title}</title>
     </header>
 
-    <body bgcolor="#ffebee">
+    <body bgcolor="#fff3e0">
     <div class="row" class="valing-wrapper">
 

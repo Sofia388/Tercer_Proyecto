@@ -15,8 +15,8 @@
         {
             $conex=new Conexion();
 
-            $this->smarty->assign('title',"Inicio");
-            $this->smarty->display('Inicio.tpl');
+            $this->smarty->assign('title',"Pagina Principal");
+            $this->smarty->display('Home.tpl');
             
 
             

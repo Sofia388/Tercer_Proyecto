@@ -1,4 +1,5 @@
 <?php
+
     require_once ('AutoLoad.php');
 
     if(isset($_GET['controller']) && isset($_GET['method']))
@@ -8,7 +9,7 @@
     }
     else
     {
-       $controller="Home";
+       $controller="HOME";
        $method="Inicio";
     }
 

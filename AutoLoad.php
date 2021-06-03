@@ -1,4 +1,5 @@
 <?php
+//inicio logico
          function Autoload($class)
          {
            //echo $class.'<br>';
@@ -18,4 +19,5 @@
              }
          }
          spl_autoload_register('Autoload');
-?>  
+?>   
+
