@@ -14,7 +14,7 @@
     public function Inicio()
     {
       $this->smarty->assign('title','Login');
-      $this->smarty->display('Inicio.tpl');
+      $this->smarty->display('Inicial.tpl');
     }
 
     public function IrLogin()
@@ -29,10 +29,28 @@
       $this->smarty->display('Registro.tpl');
     }
 
-    public function UsuarioExistente()
+    public function Regreso()
     {
-      $email=$_POST['NombreUser'];
-      $pass=$_POST['password'];
+      $this->smarty->assign('title','Inicio');
+      $this->smarty->display('Home.tpl');
+    }
+
+    public function Cerrar()
+    {
+      $this->smarty->assign('title','Inicio');
+      $this->smarty->display('Home.tpl');
+    }
+
+    public function Anterior()
+    {
+      $this->smarty->assign('title','Inicio');
+      $this->smarty->display('Bienvenida.tpl');
+    }
+
+    public function BuscarUsuario()
+    {
+      $email=$_POST['email'];
+      $pass=$_POST['pass'];
 
       $us=$this->user->BuscarUser($email,$pass);
 
@@ -42,18 +60,18 @@
               $usuario=mysqli_fetch_assoc($us);
 
               $_SESSION['user']=$usuario['Correo'];
-              $_SESSION['id']=$usuario['id'];
+              $_SESSION['id']=$usuario['idBlogUsuario'];
       
              if($usuario['BlogTipoUsuario_idBlogTipoUsuario']==1)
                 {
                   $this->smarty->assign('title','Login');
-                  $this->smarty->display('Admin.tpl');
+                  $this->smarty->display('Administrador.tpl');
                 }
               else
                 {  
             
                   $this->smarty->assign('title','Login');
-                  $this->smarty->display('InicioTrab.tpl');
+                  $this->smarty->display('Bienvenida.tpl');
                 }
             }
             else if ($us->num_rows>1)
@@ -67,6 +85,24 @@
                 echo "Usuario o contraseña son incorrectos";
               }
     }
+
+    public function GuardarUsuario()
+      {
+        $email=$_POST['email'];
+        $nombre=$_POST['nombre'];
+        $apellido=$_POST['apellido'];
+        $pass=$_POST['pass'];
+        $fecha=$_POST['fecha'];
+        $telefono=$_POST['cel'];
+
+        $user=$this->user->GuardarUser(2, $email, $nombre, $apellido, $pass, $fecha, $telefono);
+
+        $this->smarty->assign('title','Login');
+        $this->smarty->display('Bienvenida.tpl');
+
+
+
+      }
 
   }
     

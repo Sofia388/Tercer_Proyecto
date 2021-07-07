@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.38, created on 2021-05-18 01:54:41
+/* Smarty version 3.1.38, created on 2021-05-10 18:12:09
   from 'C:\MAMP\htdocs\Proyecto_Blog\View\Temas\Tema3.Peliculas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.38',
-  'unifunc' => 'content_60a31e61bab6e7_94939697',
+  'unifunc' => 'content_60997779037c51_48318205',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8c268341388b63e5841d7faa8c7fe3bb1f468f21' => 
     array (
       0 => 'C:\\MAMP\\htdocs\\Proyecto_Blog\\View\\Temas\\Tema3.Peliculas.tpl',
-      1 => 1621302865,
+      1 => 1620670313,
       2 => 'file',
     ),
   ),
@@ -22,28 +22,20 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:Cabeceras/Footer.tpl' => 1,
   ),
 ),false)) {
-function content_60a31e61bab6e7_94939697 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60997779037c51_48318205 (Smarty_Internal_Template $_smarty_tpl) {
 ?>    <?php $_smarty_tpl->_subTemplateRender("file:Cabeceras/Header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-   <nav>
+          <nav>
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">Peliculas</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <?php echo $_smarty_tpl->tpl_vars['Tema']->value[0]['Nombre'];?>
-
-        <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Tema']->value, 'T');
-$_smarty_tpl->tpl_vars['T']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['T']->value) {
-$_smarty_tpl->tpl_vars['T']->do_else = false;
-?>
-        <li><a href="?controller=User&method=<?php echo $_smarty_tpl->tpl_vars['T']->value['Nombre'];?>
-"><?php echo $_smarty_tpl->tpl_vars['T']->value['Nombre'];?>
-</a></li>
-        <?php
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+        <li><a href="?controller=User&method=Arte">Arte</a></li>
+        <li><a href="?controller=User&method=Juegos">Juegos</a></li>
+        <li><a href="?controller=User&method=Libros">Libros</a></li>
+        <li><a href="?controller=User&method=Musica">Música</a></li>
+        <li><a href="?controller=User&method=Anterior">Regresar</a></li>
+        <li><a href="?controller=User&method=Cerrar">Cerrar</a></li>
       </ul>
     </div>
   </nav>

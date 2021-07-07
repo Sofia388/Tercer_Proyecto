@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.38, created on 2021-06-03 17:40:50
-  from 'C:\MAMP\htdocs\Tercer_Proyecto\View\Login.tpl' */
+/* Smarty version 3.1.38, created on 2021-07-06 23:43:07
+  from 'C:\wamp64\www\Tercer_Proyecto\View\Login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.38',
-  'unifunc' => 'content_60b91422353894_21867763',
+  'unifunc' => 'content_60e4ea8becaab1_16588477',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '9861402ffe8a5e66a4cd5bc152836a59038fa66b' => 
+    '5892f8521ecc465abc8b3e2043f3d21dee53ceff' => 
     array (
-      0 => 'C:\\MAMP\\htdocs\\Tercer_Proyecto\\View\\Login.tpl',
-      1 => 1620081707,
+      0 => 'C:\\wamp64\\www\\Tercer_Proyecto\\View\\Login.tpl',
+      1 => 1625278147,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:Cabeceras/Header.tpl' => 1,
   ),
 ),false)) {
-function content_60b91422353894_21867763 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60e4ea8becaab1_16588477 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:Cabeceras/Header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.38, created on 2021-05-20 22:25:00
+/* Smarty version 3.1.38, created on 2021-05-10 21:17:15
   from 'C:\MAMP\htdocs\Proyecto_Blog\View\Temas\Tema2.Juegos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.38',
-  'unifunc' => 'content_60a6e1bc27c598_41182760',
+  'unifunc' => 'content_6099a2dbba6a64_41358204',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'aaf181c9136bc5de1e7f9e95f6da71d8de59f848' => 
     array (
       0 => 'C:\\MAMP\\htdocs\\Proyecto_Blog\\View\\Temas\\Tema2.Juegos.tpl',
-      1 => 1621549415,
+      1 => 1620681426,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:Cabeceras/Footer.tpl' => 1,
   ),
 ),false)) {
-function content_60a6e1bc27c598_41182760 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6099a2dbba6a64_41358204 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:Cabeceras/Header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -31,20 +31,12 @@ $_smarty_tpl->_subTemplateRender("file:Cabeceras/Header.tpl", $_smarty_tpl->cach
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">Juegos</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <?php echo $_smarty_tpl->tpl_vars['Tema']->value[0]['Nombre'];?>
-
-        <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Tema']->value, 'T');
-$_smarty_tpl->tpl_vars['T']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['T']->value) {
-$_smarty_tpl->tpl_vars['T']->do_else = false;
-?>
-        <li><a href="?controller=User&method=<?php echo $_smarty_tpl->tpl_vars['T']->value['Nombre'];?>
-"><?php echo $_smarty_tpl->tpl_vars['T']->value['Nombre'];?>
-</a></li>
-        <?php
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+        <li><a href="?controller=User&method=Arte">Arte</a></li>
+        <li><a href="?controller=User&method=Libros">Libros</a></li>
+        <li><a href="?controller=User&method=Musica">Música</a></li>
+        <li><a href="?controller=User&method=Peliculas">Peliculas/Series</a></li>
+        <li><a href="?controller=User&method=Anterior">Regresar</a></li>
+        <li><a href="?controller=User&method=Cerrar">Cerrar</a></li>
       </ul>
     </div>
   </nav>

@@ -1,5 +1,7 @@
 <html>
 
+
+
     <header>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -10,6 +12,6 @@
         <title>{$title}</title>
     </header>
 
-    <body bgcolor="#fff3e0">
+    <body bgcolor="#ffebee">
     <div class="row" class="valing-wrapper">
 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.38, created on 2021-05-20 01:20:31
+/* Smarty version 3.1.38, created on 2021-05-11 18:02:45
   from 'C:\MAMP\htdocs\Proyecto_Blog\View\Administrador.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.38',
-  'unifunc' => 'content_60a5b95f4ba0e5_30533189',
+  'unifunc' => 'content_609ac6c5d0a757_53143973',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c51cb314fae5a2dc7f0d835c9bf775f7c065b793' => 
     array (
       0 => 'C:\\MAMP\\htdocs\\Proyecto_Blog\\View\\Administrador.tpl',
-      1 => 1621473628,
+      1 => 1620756158,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:Cabeceras/Footer.tpl' => 1,
   ),
 ),false)) {
-function content_60a5b95f4ba0e5_30533189 (Smarty_Internal_Template $_smarty_tpl) {
+function content_609ac6c5d0a757_53143973 (Smarty_Internal_Template $_smarty_tpl) {
 ?>  <?php $_smarty_tpl->_subTemplateRender("file:Cabeceras/Header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>  
 
@@ -79,33 +79,6 @@ function content_60a5b95f4ba0e5_30533189 (Smarty_Internal_Template $_smarty_tpl)
     <button class="btn waves-effect waves-light" type="submit" name="action">Enviar</button>
   </form>
 
-    <form method="post" action="?controller=AdminPost&method=Contnew" class="col s12  center aling">
-    <h5>Crear Contenido</h5>
-
-    <div class="row">
-        <div class="input-field col s6 s2 row offset-s2">
-          <input id="temsnumid" type="text" class="validate" name="temsnumid" required=""/>
-          <label for="temsnumid">Numero de ID del Tema</label>
-        </div>
-
-        <div class="input-field col s6 s2 row offset-s2">
-          <input id="nomtema" type="text" class="validate" name="nomtema" required=""/>
-          <label for="nomtema">Nombre</label>
-        </div>
-    </div>
-
-    <div class="input-field col s6 s2 row offset-s2">
-    <input id="namcontenido" type="text" name="namcontenido" class="validate" requiered=""/>
-     <label for="namcontenido">Contenido</label>
-     </div>
-
-     <div class="input-field col s6 s2 row offset-s2">
-    <input id="namefoto" type="text" name="namefoto" class="validate" requiered=""/>
-     <label for="namefoto">Foto</label>
-    </div><br><br><br><br><br><br><br><br><br>
-    <button class="btn waves-effect waves-light" type="submit" name="action">Enviar</button>
-  </form>
-
 
   <form method="post" action="?controller=AdminPost&method=BajaUsuario" class="col s12  center aling">
     <h5>Dar baja al usuario</h5>
@@ -117,33 +90,6 @@ function content_60a5b95f4ba0e5_30533189 (Smarty_Internal_Template $_smarty_tpl)
       </div >
 
           <button class="btn waves-effect waves-light" type="submit" name="action">Enviar</button>
-  </form>
-
-
-
-
-  <form method="post" action="?controller=AdminPost&method=BajaTema" class="col s12  center aling">
-        <h5>Dar de baja un Tema</h5>
-            <div class="row">
-             <div class="input-field col s6 s2 row offset-s2">
-                      <input id="BajaTema" type="text" class="validate" name="BajaTema" required=""/>
-                     <label for="BajaTema">Nombre</label>
-                </div>
-            </div>
-
-                <button class="btn waves-effect waves-light" type="submit" name="action">Enviar</button>
-  </form>
-
-    <form method="post" action="?controller=AdminPost&method=BajaContenido" class="col s12  center aling">
-        <h5>Dar de baja al Contenido</h5>
-            <div class="row">
-             <div class="input-field col s6 s2 row offset-s2">
-                      <input id="BajaCon" type="text" class="validate" name="BajaCon" required=""/>
-                     <label for="BajaCon">Nombre</label>
-                </div>
-            </div>
-
-                <button class="btn waves-effect waves-light" type="submit" name="action">Enviar</button>
   </form>
 
 
@@ -160,7 +106,17 @@ function content_60a5b95f4ba0e5_30533189 (Smarty_Internal_Template $_smarty_tpl)
                 <button class="btn waves-effect waves-light" type="submit" name="action">Enviar</button>
   </form>
 
-  
+  <form method="post" action="?controller=AdminPost&method=BajaTema" class="col s12  center aling">
+        <h5>Dar de baja un Tema</h5>
+            <div class="row">
+             <div class="input-field col s6 s2 row offset-s2">
+                      <input id="BajaTema" type="text" class="validate" name="BajaTema" required=""/>
+                     <label for="BajaTema">Nombre</label>
+                </div>
+            </div>
+
+                <button class="btn waves-effect waves-light" type="submit" name="action">Enviar</button>
+  </form>
 
 <?php $_smarty_tpl->_subTemplateRender("file:Cabeceras/Footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 }

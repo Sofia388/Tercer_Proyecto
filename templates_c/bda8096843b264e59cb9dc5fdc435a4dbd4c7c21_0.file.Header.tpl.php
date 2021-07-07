@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.38, created on 2021-06-23 19:40:18
+/* Smarty version 3.1.38, created on 2021-07-06 23:43:02
   from 'C:\wamp64\www\Tercer_Proyecto\View\Cabeceras\Header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.38',
-  'unifunc' => 'content_60d38e2242ad98_34093709',
+  'unifunc' => 'content_60e4ea8641a932_22513185',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bda8096843b264e59cb9dc5fdc435a4dbd4c7c21' => 
     array (
       0 => 'C:\\wamp64\\www\\Tercer_Proyecto\\View\\Cabeceras\\Header.tpl',
-      1 => 1624468707,
+      1 => 1625278147,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60d38e2242ad98_34093709 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60e4ea8641a932_22513185 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
+
+
 
     <header>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -34,7 +36,7 @@ function content_60d38e2242ad98_34093709 (Smarty_Internal_Template $_smarty_tpl)
 </title>
     </header>
 
-    <body bgcolor="#fff3e0">
+    <body bgcolor="#ffebee">
     <div class="row" class="valing-wrapper">
 
 <?php }

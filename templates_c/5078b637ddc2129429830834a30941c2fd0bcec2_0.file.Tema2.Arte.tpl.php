@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.38, created on 2021-05-20 22:27:05
+/* Smarty version 3.1.38, created on 2021-05-10 20:44:20
   from 'C:\MAMP\htdocs\Proyecto_Blog\View\Temas\Tema2.Arte.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.38',
-  'unifunc' => 'content_60a6e239495a93_36282471',
+  'unifunc' => 'content_60999b247c03e0_77490883',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5078b637ddc2129429830834a30941c2fd0bcec2' => 
     array (
       0 => 'C:\\MAMP\\htdocs\\Proyecto_Blog\\View\\Temas\\Tema2.Arte.tpl',
-      1 => 1621549612,
+      1 => 1620679455,
       2 => 'file',
     ),
   ),
@@ -22,34 +22,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:Cabeceras/Footer.tpl' => 1,
   ),
 ),false)) {
-function content_60a6e239495a93_36282471 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60999b247c03e0_77490883 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:Cabeceras/Header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-  <nav>
+
+      <nav>
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">Arte</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <?php echo $_smarty_tpl->tpl_vars['Tema']->value[0]['Nombre'];?>
-
-        <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Tema']->value, 'T');
-$_smarty_tpl->tpl_vars['T']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['T']->value) {
-$_smarty_tpl->tpl_vars['T']->do_else = false;
-?>
-        <li><a href="?controller=User&method=<?php echo $_smarty_tpl->tpl_vars['T']->value['Nombre'];?>
-"><?php echo $_smarty_tpl->tpl_vars['T']->value['Nombre'];?>
-</a></li>
-        <?php
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+        <li><a href="?controller=User&method=Juegos">Juegos</a></li>
+        <li><a href="?controller=User&method=Libros">Libros</a></li>
+        <li><a href="?controller=User&method=Musica">Música</a></li>
+        <li><a href="?controller=User&method=Peliculas">Peliculas/Series</a></li>
+        <li><a href="?controller=User&method=Arte">Regresar</a></li>
+        <li><a href="?controller=User&method=Cerrar">Cerrar</a></li>
       </ul>
     </div>
   </nav>
 
-
-    <nav>
+      <nav>
     <div class="nav-wrapper">
       <div class="col s12">
         <a href="?controller=User&method=Arte" class="breadcrumb">Primer Tema</a>
@@ -59,71 +51,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </div>
   </nav>
 
-
    <h2>Las pinturas mas Famosas</h2>
-
-   
-  <table border=1>
-        <tr>
-          <td><strong>Titulo</strong></td>
-          <td><strong>Contenido</strong></td>
-          <td><strong>Foto</strong></td>
-        </tr>
-
-
-        <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Contido']->value, 'C');
-$_smarty_tpl->tpl_vars['C']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['C']->value) {
-$_smarty_tpl->tpl_vars['C']->do_else = false;
-?>
-        
-        <tr>
-          <td><?php echo $_smarty_tpl->tpl_vars['C']->value['Titulo'];?>
-</td>
-          <td><?php echo $_smarty_tpl->tpl_vars['C']->value['Contenido'];?>
-</td>
-          <td><?php echo $_smarty_tpl->tpl_vars['C']->value['Foto'];?>
-</td>
-        </tr>
-
-        <?php
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-  </table>
-
-
-  <table border=1>
-        <tr>
-          <td><strong>Titulo</strong></td>
-          <td><strong>Datos</strong></td>
-          <td><strong>Foto</strong></td>
-        </tr>
-
-
-        <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Cont']->value, 'Cnt');
-$_smarty_tpl->tpl_vars['Cnt']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['Cnt']->value) {
-$_smarty_tpl->tpl_vars['Cnt']->do_else = false;
-?>
-        
-        <tr>
-          <td><?php echo $_smarty_tpl->tpl_vars['Cnt']->value['Titulo'];?>
-</td>
-          <td><?php echo $_smarty_tpl->tpl_vars['Cnt']->value['Contenido'];?>
-</td>
-          <td> <?php echo $_smarty_tpl->tpl_vars['Cnt']->value['Foto'];?>
-</td>
-        </tr>
-
-        <?php
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-  </table>
-
-
-  
 
     <table>
 <tr>

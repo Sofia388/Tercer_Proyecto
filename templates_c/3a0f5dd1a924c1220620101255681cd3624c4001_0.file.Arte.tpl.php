@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.38, created on 2021-05-20 00:40:48
+/* Smarty version 3.1.38, created on 2021-05-10 02:36:01
   from 'C:\MAMP\htdocs\Proyecto_Blog\View\Categorias\Arte.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.38',
-  'unifunc' => 'content_60a5b0100da149_86688816',
+  'unifunc' => 'content_60989c115f5ab7_40610750',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3a0f5dd1a924c1220620101255681cd3624c4001' => 
     array (
       0 => 'C:\\MAMP\\htdocs\\Proyecto_Blog\\View\\Categorias\\Arte.tpl',
-      1 => 1621471244,
+      1 => 1620614157,
       2 => 'file',
     ),
   ),
@@ -23,34 +23,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:Cabeceras/Footer.tpl' => 1,
   ),
 ),false)) {
-function content_60a5b0100da149_86688816 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60989c115f5ab7_40610750 (Smarty_Internal_Template $_smarty_tpl) {
 ?>    <?php $_smarty_tpl->_subTemplateRender("file:Cabeceras/Header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-  <nav>
+      <nav>
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">Arte</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <?php echo $_smarty_tpl->tpl_vars['Tema']->value[0]['Nombre'];?>
-
-        <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['Tema']->value, 'T');
-$_smarty_tpl->tpl_vars['T']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['T']->value) {
-$_smarty_tpl->tpl_vars['T']->do_else = false;
-?>
-        <li><a href="?controller=User&method=<?php echo $_smarty_tpl->tpl_vars['T']->value['Nombre'];?>
-"><?php echo $_smarty_tpl->tpl_vars['T']->value['Nombre'];?>
-</a></li>
-        <?php
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+        <li><a href="?controller=User&method=Juegos">Juegos</a></li>
+        <li><a href="?controller=User&method=Libros">Libros</a></li>
+        <li><a href="?controller=User&method=Musica">Música</a></li>
+        <li><a href="?controller=User&method=Peliculas">Peliculas/Series</a></li>
+        <li><a href="?controller=User&method=Anterior">Regresar</a></li>
+        <li><a href="?controller=User&method=Cerrar">Cerrar</a></li>
       </ul>
     </div>
   </nav>
 
 
-      <nav>
+    <nav>
     <div class="nav-wrapper">
       <div class="col s12">
         <a href="#" class="breadcrumb">Primer Tema</a>

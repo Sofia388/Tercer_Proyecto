@@ -1,8 +1,6 @@
 <?php
-//inicio logico
          function Autoload($class)
          {
-           //echo $class.'<br>';
              if(is_file('Controller/'.$class.'.Controller.php'))
              {
                require_once('Controller/'.$class.'.Controller.php');
@@ -14,7 +12,6 @@
              else if (is_file('Model/'.$class.'.Model.php'))
              {
                require_once('Model/'.$class.'.Model.php');
-               //echo "en auto load conexion";
 
              }
          }
