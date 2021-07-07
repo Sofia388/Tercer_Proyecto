@@ -8,10 +8,10 @@
             $this->con=new Conexion();
         }
             
-        public function BuscarUser($user, $pass)
+        public function BuscarUser($numUs, $pass)
         {
             $this->con=new Conexion();
-            $sql="SELECT * FROM `blogusuario` WHERE `Correo` = '$user' AND `Pass`='$pass';";
+            $sql="SELECT * FROM `trabajador` WHERE `Codigo_u` = '$numUs' AND `Contraseña`='$pass';";
             $consulta=$this->con->query($sql);
             $this->con->close();
             return $consulta;

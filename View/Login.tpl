@@ -22,7 +22,7 @@
     <div class="row" >
         <div class="input-field col s6 s2 row offset-s2 center aling" >
           <input placeholder="DPI" id="DPI" type="DPI" class="validate" required="" name="DPI"/>
-          <label for="DPI">DPI</label>
+          <label for="DPI">Usuario</label>
         </div>
     </div>
 

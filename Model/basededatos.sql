@@ -6,9 +6,10 @@ CREATE TABLE AnticipoDescuestos (
 
 CREATE TABLE Beneficio (
   idBeneficios INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  PrestacionesdeTrabajo_idPrestacionesdeTrabajo INTEGER UNSIGNED NULL,
+  PrestacionesDeTrabajo_idPrestacionesDeTrabajo INTEGER UNSIGNED NOT NULL,
   Productividad BOOL NULL,
-  PRIMARY KEY(idBeneficios)
+  PRIMARY KEY(idBeneficios),
+  INDEX Beneficio_FKIndex1(PrestacionesDeTrabajo_idPrestacionesDeTrabajo)
 );
 
 CREATE TABLE BonificacionDevengados (
@@ -19,15 +20,14 @@ CREATE TABLE BonificacionDevengados (
 
 CREATE TABLE CincoPorciento (
   id_CincoPorciento INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  Ley_RentaImponible_idRentaImponible INTEGER UNSIGNED NOT NULL,
   Ley_RentaImponibleIngresos_idIngresos INTEGER UNSIGNED NOT NULL,
+  Ley_idLey INTEGER UNSIGNED NOT NULL,
   LeyRentaImponible_idRentaImponible INTEGER UNSIGNED NULL,
   LeyRentaImponibleIngresos_idIngresos INTEGER UNSIGNED NULL,
-  Ley_idLey INTEGER UNSIGNED NULL,
   Porcentaje DOUBLE NULL,
   ImporteFijo INT NULL,
   PRIMARY KEY(id_CincoPorciento),
-  INDEX CincoPorciento_FKIndex1(Ley_idLey, Ley_RentaImponibleIngresos_idIngresos, Ley_RentaImponible_idRentaImponible)
+  INDEX CincoPorciento_FKIndex1(Ley_idLey, Ley_RentaImponibleIngresos_idIngresos)
 );
 
 CREATE TABLE Comisiones (
@@ -45,7 +45,7 @@ CREATE TABLE Departamento (
 
 CREATE TABLE Egresos (
   idEgresos INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  IGSS_idIGSS INTEGER UNSIGNED NULL,
+  IGSS_idIGSS INTEGER UNSIGNED NOT NULL,
   Ley INT NULL,
   IGSSporaño DOUBLE NULL,
   PRIMARY KEY(idEgresos),
@@ -70,10 +70,10 @@ CREATE TABLE HoreasExtras (
 
 CREATE TABLE IGSS (
   idIGSS INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  Comisiones_idComisiones INTEGER UNSIGNED NOT NULL,
   HoreasExtras_idHoreasExtras INTEGER UNSIGNED NOT NULL,
-  Comisiones_idComisiones INTEGER UNSIGNED NULL,
+  Sueldo_idSueldo INTEGER UNSIGNED NOT NULL,
   HorasExtras_idHorasExtras INTEGER UNSIGNED NULL,
-  Sueldo_idSueldo INTEGER UNSIGNED NULL,
   IGSS DOUBLE NULL,
   PRIMARY KEY(idIGSS),
   INDEX IGSS_FKIndex1(Sueldo_idSueldo),
@@ -83,8 +83,8 @@ CREATE TABLE IGSS (
 
 CREATE TABLE Ingresos (
   idIngresos INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  BonificacionDevengados_idBonificacion INTEGER UNSIGNED NULL,
-  Sueldo_idSueldo INTEGER UNSIGNED NULL,
+  BonificacionDevengados_idBonificacion INTEGER UNSIGNED NOT NULL,
+  Sueldo_idSueldo INTEGER UNSIGNED NOT NULL,
   SueldosSegunAño DOUBLE NULL,
   Bonificacion DOUBLE NULL,
   PRIMARY KEY(idIngresos),
@@ -94,14 +94,14 @@ CREATE TABLE Ingresos (
 
 CREATE TABLE ISR (
   idISR INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  CincoPorciento_id_CincoPorciento INTEGER UNSIGNED NOT NULL,
   SietePorciento_idSietePorciento INTEGER UNSIGNED NOT NULL,
+  CincoPorciento_id_CincoPorciento INTEGER UNSIGNED NOT NULL,
   Siete_idSiete INTEGER UNSIGNED NULL,
   Cinco_idCinto INTEGER UNSIGNED NULL,
   ISR DOUBLE NULL,
   PRIMARY KEY(idISR),
-  INDEX ISR_FKIndex1(SietePorciento_idSietePorciento),
-  INDEX ISR_FKIndex2(CincoPorciento_id_CincoPorciento)
+  INDEX ISR_FKIndex1(CincoPorciento_id_CincoPorciento),
+  INDEX ISR_FKIndex2(SietePorciento_idSietePorciento)
 );
 
 CREATE TABLE Judiciales (
@@ -114,9 +114,8 @@ CREATE TABLE Ley (
   idLey INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   RentaImponibleIngresos_idIngresos INTEGER UNSIGNED NOT NULL,
   RentaImponible_idRentaImponible INTEGER UNSIGNED NOT NULL,
-  RentaImponible_Ingresos_idIngresos INTEGER UNSIGNED NOT NULL,
-  PRIMARY KEY(idLey, RentaImponibleIngresos_idIngresos, RentaImponible_idRentaImponible),
-  INDEX Ley_FKIndex1(RentaImponible_idRentaImponible, RentaImponible_Ingresos_idIngresos)
+  PRIMARY KEY(idLey, RentaImponibleIngresos_idIngresos),
+  INDEX Ley_FKIndex1(RentaImponible_idRentaImponible)
 );
 
 CREATE TABLE Motivo (
@@ -176,25 +175,24 @@ CREATE TABLE Puesto (
 
 CREATE TABLE RentaImponible (
   idRentaImponible INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  Egresos_idEgresos INTEGER UNSIGNED NOT NULL,
   Ingresos_idIngresos INTEGER UNSIGNED NOT NULL,
-  Egresos_idEgresos INTEGER UNSIGNED NULL,
   RentaImponible INTEGER UNSIGNED NULL,
-  PRIMARY KEY(idRentaImponible, Ingresos_idIngresos),
-  INDEX RentaImponible_FKIndex1(Egresos_idEgresos),
-  INDEX RentaImponible_FKIndex2(Ingresos_idIngresos)
+  PRIMARY KEY(idRentaImponible),
+  INDEX RentaImponible_FKIndex1(Ingresos_idIngresos),
+  INDEX RentaImponible_FKIndex2(Egresos_idEgresos)
 );
 
 CREATE TABLE SietePorciento (
   idSietePorciento INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  Ley_RentaImponible_idRentaImponible INTEGER UNSIGNED NOT NULL,
   Ley_RentaImponibleIngresos_idIngresos INTEGER UNSIGNED NOT NULL,
+  Ley_idLey INTEGER UNSIGNED NOT NULL,
   LeyRentaImponible_idRentaImponible INTEGER UNSIGNED NULL,
   LeyRentaImponibleIngresos_idIngresos INTEGER UNSIGNED NULL,
-  Ley_idLey INTEGER UNSIGNED NULL,
   Porcentaje DOUBLE NULL,
   ImporteFijo INT NULL,
   PRIMARY KEY(idSietePorciento),
-  INDEX SietePorciento_FKIndex1(Ley_idLey, Ley_RentaImponibleIngresos_idIngresos, Ley_RentaImponible_idRentaImponible)
+  INDEX SietePorciento_FKIndex1(Ley_idLey, Ley_RentaImponibleIngresos_idIngresos)
 );
 
 CREATE TABLE Sueldo (
@@ -213,10 +211,10 @@ CREATE TABLE Suspencion (
 
 CREATE TABLE TotalDeDescuentos (
   idTotalDeDescuentos INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  AnticipoDescuestos_idAnticipo INTEGER UNSIGNED NOT NULL,
+  Judiciales_idJudiciales INTEGER UNSIGNED NOT NULL,
   Prestamo_idPrestamo INTEGER UNSIGNED NOT NULL,
-  ISR_idISR INTEGER UNSIGNED NULL,
-  AnticipoDescuestos_idAnticipo INTEGER UNSIGNED NULL,
-  Judiciales_idJudiciales INTEGER UNSIGNED NULL,
+  ISR_idISR INTEGER UNSIGNED NOT NULL,
   Prestamos_idPrestamos INTEGER UNSIGNED NULL,
   TotaldeDescuentos DOUBLE NULL,
   PRIMARY KEY(idTotalDeDescuentos),
@@ -228,11 +226,11 @@ CREATE TABLE TotalDeDescuentos (
 
 CREATE TABLE TotalDevengado (
   idIngresos INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  BonificacionDevengados_idBonificacion INTEGER UNSIGNED NOT NULL,
+  Comisiones_idComisiones INTEGER UNSIGNED NOT NULL,
   HoreasExtras_idHoreasExtras INTEGER UNSIGNED NOT NULL,
-  BonificacionDevengados_idBonificacion INTEGER UNSIGNED NULL,
-  Comisiones_idComisiones INTEGER UNSIGNED NULL,
+  Sueldo_idSueldo INTEGER UNSIGNED NOT NULL,
   HorasExtras_idHorasExtras INTEGER UNSIGNED NULL,
-  Sueldo_idSueldo INTEGER UNSIGNED NULL,
   TotalDevengado DOUBLE NULL,
   PRIMARY KEY(idIngresos),
   INDEX TotalDevengado_FKIndex1(Sueldo_idSueldo),
@@ -268,7 +266,7 @@ CREATE TABLE Trabajador (
   Correo VARCHAR(255) NULL,
   Contraseña VARCHAR(45) NULL,
   Codigo_u INTEGER UNSIGNED NULL,
-  PRIMARY KEY(Usuario, Beneficio_idBeneficios),
+  PRIMARY KEY(Usuario),
   INDEX Trabajador_FKIndex1(Puesto_idPuesto),
   INDEX Trabajador_FKIndex2(Estado_idEstado),
   INDEX Trabajador_FKIndex3(Pago_de_Sueldo_idPago_de_Sueldo),

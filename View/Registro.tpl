@@ -14,18 +14,6 @@
   <div>
     <h1 align="center">Registro</h1>
    </div>
-  
-  
-  
-  <div class="row">
-    <form method="post" action="?controller=User&method=GuardarUsuario" class="col s12">
-      <div class="row">
-        <div class="input-field col s6 s2 row offset-s2 center aling">
-          <input id="DPI" type="text" class="validate" name="DPI" required="">
-          <label for="DPI">DPI</label>
-        </div>
-      </div>
-      
       
       <div class="row">
         <div class="input-field col s6 s2 row offset-s2 center aling">
@@ -58,6 +46,16 @@
           <input id="cel" type="text" class="validate" name="cel" required="">
           <label for="cel">Telefono</label>
         </div>
+      </div>
+
+      <div class="input-field col s12">
+        <select>
+          <option value="" disabled selected>Choose your option</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+        <label>Departamento</label>
       </div>
 
             <div class="row" class="center-align">

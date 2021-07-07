@@ -49,35 +49,37 @@
 
     public function BuscarUsuario()
     {
-      $email=$_POST['email'];
+      $numUs=$_POST['DPI'];
       $pass=$_POST['pass'];
 
-      $us=$this->user->BuscarUser($email,$pass);
+      $us=$this->user->BuscarUser($numUs,$pass);
 
             if($us->num_rows==1)
             {
               session_start();
               $usuario=mysqli_fetch_assoc($us);
 
-              $_SESSION['user']=$usuario['Correo'];
-              $_SESSION['id']=$usuario['idBlogUsuario'];
+              ///$_SESSION['DPI']=$numUs[`Codigo_u`];
+              $_SESSION['id']=$usuario['Departamento_Depto'];
       
-             if($usuario['BlogTipoUsuario_idBlogTipoUsuario']==1)
+             if($usuario['Departamento_Depto']==1)
                 {
                   $this->smarty->assign('title','Login');
-                  $this->smarty->display('Administrador.tpl');
+                  $this->smarty->display('SalaVentas.tpl');
                 }
-              else
+              else if($usuario['Departamento_Depto']==2)
                 {  
             
                   $this->smarty->assign('title','Login');
-                  $this->smarty->display('Bienvenida.tpl');
+                  $this->smarty->display('DtpAdmon.tpl');
+                }
+                else
+                {  
+            
+                  $this->smarty->assign('title','Login');
+                  $this->smarty->display('Administrador.tpl');
                 }
             }
-            else if ($us->num_rows>1)
-                {
-                  echo "mas de un usuario";
-                }
             else 
               {
                 $this->smarty->assign('title','Login');
@@ -99,9 +101,6 @@
 
         $this->smarty->assign('title','Login');
         $this->smarty->display('Bienvenida.tpl');
-
-
-
       }
 
   }
