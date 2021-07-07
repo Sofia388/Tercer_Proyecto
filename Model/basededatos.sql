@@ -1,19 +1,19 @@
-CREATE TABLE Anticipo (
+CREATE TABLE AnticipoDescuestos (
   idAnticipo INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  Anticipo DOUBLE NULL,
+  AnticipoDescuestosDes DOUBLE NULL,
   PRIMARY KEY(idAnticipo)
 );
 
-CREATE TABLE Beneficios (
+CREATE TABLE Beneficio (
   idBeneficios INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   PrestacionesdeTrabajo_idPrestacionesdeTrabajo INTEGER UNSIGNED NULL,
-  Productividad BOOLEAN NULL,
+  Productividad BOOL NULL,
   PRIMARY KEY(idBeneficios)
 );
 
-CREATE TABLE Bonificacion (
+CREATE TABLE BonificacionDevengados (
   idBonificacion INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  Bonificacion DOUBLE NULL,
+  BonificacionDevengados DOUBLE NULL,
   PRIMARY KEY(idBonificacion)
 );
 
@@ -47,7 +47,7 @@ CREATE TABLE Egresos (
   idEgresos INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   IGSS_idIGSS INTEGER UNSIGNED NULL,
   Ley INT NULL,
-  IGSSporaï¿½o DOUBLE NULL,
+  IGSSporaño DOUBLE NULL,
   PRIMARY KEY(idEgresos),
   INDEX Egresos_FKIndex1(IGSS_idIGSS)
 );
@@ -55,7 +55,7 @@ CREATE TABLE Egresos (
 CREATE TABLE Estado (
   idEstado INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   Motivo_idMotivo INTEGER UNSIGNED NOT NULL,
-  Estado BOOLEAN NULL,
+  Estado BOOL NULL,
   PRIMARY KEY(idEstado),
   INDEX Estado_FKIndex1(Motivo_idMotivo)
 );
@@ -83,13 +83,13 @@ CREATE TABLE IGSS (
 
 CREATE TABLE Ingresos (
   idIngresos INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  Bonificacion_idBonificacion INTEGER UNSIGNED NULL,
+  BonificacionDevengados_idBonificacion INTEGER UNSIGNED NULL,
   Sueldo_idSueldo INTEGER UNSIGNED NULL,
-  SueldosSegunAï¿½o DOUBLE NULL,
+  SueldosSegunAño DOUBLE NULL,
   Bonificacion DOUBLE NULL,
   PRIMARY KEY(idIngresos),
   INDEX Ingresos_FKIndex1(Sueldo_idSueldo),
-  INDEX Ingresos_FKIndex2(Bonificacion_idBonificacion)
+  INDEX Ingresos_FKIndex2(BonificacionDevengados_idBonificacion)
 );
 
 CREATE TABLE ISR (
@@ -115,7 +115,8 @@ CREATE TABLE Ley (
   RentaImponibleIngresos_idIngresos INTEGER UNSIGNED NOT NULL,
   RentaImponible_idRentaImponible INTEGER UNSIGNED NOT NULL,
   RentaImponible_Ingresos_idIngresos INTEGER UNSIGNED NOT NULL,
-  PRIMARY KEY(idLey, RentaImponibleIngresos_idIngresos, RentaImponible_idRentaImponible)
+  PRIMARY KEY(idLey, RentaImponibleIngresos_idIngresos, RentaImponible_idRentaImponible),
+  INDEX Ley_FKIndex1(RentaImponible_idRentaImponible, RentaImponible_Ingresos_idIngresos)
 );
 
 CREATE TABLE Motivo (
@@ -123,9 +124,9 @@ CREATE TABLE Motivo (
   Permiso_idPermiso INTEGER UNSIGNED NOT NULL,
   Vacaciones_idVacaciones INTEGER UNSIGNED NOT NULL,
   Suspencion_idSuspencion INTEGER UNSIGNED NOT NULL,
-  Motivo BOOLEAN NULL,
+  Motivo BOOL NULL,
   PRIMARY KEY(idMotivo),
-  INDEX Motivo_FKIndex3(Suspencion_idSuspencion),
+  INDEX Motivo_FKIndex1(Suspencion_idSuspencion),
   INDEX Motivo_FKIndex2(Vacaciones_idVacaciones),
   INDEX Motivo_FKIndex3(Permiso_idPermiso)
 );
@@ -136,7 +137,7 @@ CREATE TABLE Pago_de_Sueldo (
   Hora DATETIME NULL,
   Cheque VARCHAR(45) NULL,
   ValordeCheque DOUBLE NULL,
-  Quincena BOOLEAN NULL,
+  Quincena BOOL NULL,
   PRIMARY KEY(idPago_de_Sueldo)
 );
 
@@ -204,7 +205,7 @@ CREATE TABLE Sueldo (
 
 CREATE TABLE Suspencion (
   idSuspencion INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  Motivo BOOLEAN NULL,
+  Motivo_Sus BOOL NULL,
   Inicio DATE NULL,
   Fin DATE NULL,
   PRIMARY KEY(idSuspencion)
@@ -214,7 +215,7 @@ CREATE TABLE TotalDeDescuentos (
   idTotalDeDescuentos INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   Prestamo_idPrestamo INTEGER UNSIGNED NOT NULL,
   ISR_idISR INTEGER UNSIGNED NULL,
-  Anticipo_idAnticipo INTEGER UNSIGNED NULL,
+  AnticipoDescuestos_idAnticipo INTEGER UNSIGNED NULL,
   Judiciales_idJudiciales INTEGER UNSIGNED NULL,
   Prestamos_idPrestamos INTEGER UNSIGNED NULL,
   TotaldeDescuentos DOUBLE NULL,
@@ -222,13 +223,13 @@ CREATE TABLE TotalDeDescuentos (
   INDEX TotalDeDescuentos_FKIndex1(ISR_idISR),
   INDEX TotalDeDescuentos_FKIndex2(Prestamo_idPrestamo),
   INDEX TotalDeDescuentos_FKIndex3(Judiciales_idJudiciales),
-  INDEX TotalDeDescuentos_FKIndex4(Anticipo_idAnticipo)
+  INDEX TotalDeDescuentos_FKIndex4(AnticipoDescuestos_idAnticipo)
 );
 
 CREATE TABLE TotalDevengado (
   idIngresos INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
   HoreasExtras_idHoreasExtras INTEGER UNSIGNED NOT NULL,
-  Bonificacion_idBonificacion INTEGER UNSIGNED NULL,
+  BonificacionDevengados_idBonificacion INTEGER UNSIGNED NULL,
   Comisiones_idComisiones INTEGER UNSIGNED NULL,
   HorasExtras_idHorasExtras INTEGER UNSIGNED NULL,
   Sueldo_idSueldo INTEGER UNSIGNED NULL,
@@ -237,7 +238,7 @@ CREATE TABLE TotalDevengado (
   INDEX TotalDevengado_FKIndex1(Sueldo_idSueldo),
   INDEX TotalDevengado_FKIndex2(HoreasExtras_idHoreasExtras),
   INDEX TotalDevengado_FKIndex3(Comisiones_idComisiones),
-  INDEX TotalDevengado_FKIndex4(Bonificacion_idBonificacion)
+  INDEX TotalDevengado_FKIndex4(BonificacionDevengados_idBonificacion)
 );
 
 CREATE TABLE TotalLiquido (
@@ -254,7 +255,7 @@ CREATE TABLE TotalLiquido (
 
 CREATE TABLE Trabajador (
   Usuario INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
-  Beneficios_idBeneficios INTEGER UNSIGNED NOT NULL,
+  Beneficio_idBeneficios INTEGER UNSIGNED NOT NULL,
   TotalLiquido_idTotalLiquido INTEGER UNSIGNED NOT NULL,
   Pago_de_Sueldo_idPago_de_Sueldo INTEGER UNSIGNED NOT NULL,
   Estado_idEstado INTEGER UNSIGNED NOT NULL,
@@ -265,14 +266,14 @@ CREATE TABLE Trabajador (
   Apellido VARCHAR(45) NULL,
   Telefono INTEGER UNSIGNED NULL,
   Correo VARCHAR(255) NULL,
-  Contraseï¿½a VARCHAR(45) NULL,
+  Contraseña VARCHAR(45) NULL,
   Codigo_u INTEGER UNSIGNED NULL,
-  PRIMARY KEY(Usuario, Beneficios_idBeneficios),
+  PRIMARY KEY(Usuario, Beneficio_idBeneficios),
   INDEX Trabajador_FKIndex1(Puesto_idPuesto),
   INDEX Trabajador_FKIndex2(Estado_idEstado),
   INDEX Trabajador_FKIndex3(Pago_de_Sueldo_idPago_de_Sueldo),
   INDEX Trabajador_FKIndex4(TotalLiquido_idTotalLiquido),
-  INDEX Trabajador_FKIndex5(Beneficios_idBeneficios)
+  INDEX Trabajador_FKIndex5(Beneficio_idBeneficios)
 );
 
 CREATE TABLE Vacaciones (
