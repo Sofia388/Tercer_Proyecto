@@ -16,6 +16,9 @@
    </div>
       
       <div class="row">
+    <form  method="post" action="?controller=User&method=GuardarUsuario" class="col s12">
+
+      <div class="row">
         <div class="input-field col s6 s2 row offset-s2 center aling">
           <input id="email" type="email" class="validate" name="email" required="">
           <label for="email">Email</label>
@@ -41,22 +44,21 @@
         </div>
       </div>
 
-                  <div class="row">
+      <div class="row">
+        <div class="input-field col s6 s2 row offset-s2 center aling">
+          <input id="depto" type="text" class="validate" name="depto" required="">
+          <label for="depto">Departamento</label>
+          <span class="helper-text" data-error="wrong" data-success="right">Coloca 1- Sala de Ventas o 2- Administracion</span>
+        </div>
+      </div>
+
+      <div class="row">
         <div class="input-field col s6 s2 row offset-s2 center aling">
           <input id="cel" type="text" class="validate" name="cel" required="">
           <label for="cel">Telefono</label>
         </div>
       </div>
 
-      <div class="input-field col s12">
-        <select>
-          <option value="" disabled selected>Choose your option</option>
-          <option value="1">Option 1</option>
-          <option value="2">Option 2</option>
-          <option value="3">Option 3</option>
-        </select>
-        <label>Departamento</label>
-      </div>
 
             <div class="row" class="center-align">
             <div class="input-field col s6 row offset-s2 center aling">

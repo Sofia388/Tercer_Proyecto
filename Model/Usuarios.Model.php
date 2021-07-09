@@ -17,10 +17,10 @@
             return $consulta;
         }
 
-        public function GuardarUser($tipo, $email, $nombre, $apellido, $pass, $fecha, $telefono)
+        public function GuardarUser($correonew,$nombre,$apellido,$contraseña,$dep,$telefono)
             {
                 $this->con=new Conexion();
-                $sql="INSERT INTO `blogusuario`(`BlogTipoUsuario_idBlogTipoUsuario`, `Correo`, `Nombre`, `Apellido`, `Pass`, `FechaNac`, `Cel`, `Estado`) VALUES ('$tipo', '$email', '$nombre', '$apellido', '$pass', '$fecha', '$telefono',1);"; 
+                $sql="INSERT INTO `trabajador`(`Correo`, `Nombre`, `Apellido`, `Contraseña`, `Departamento_Depto`, `Telefono`,`Codigo_u`,`Pago_de_Sueldo_idPago_de_Sueldos`,`Total_Liquido_idTotalLiquido`,`Estado_idEstado`,`Pago_de_Sueldo_idPago_de_Sueldo`,`TotalLiquido_idTotalLiquido`,`Beneficio_idBeneficios`) VALUES ('$correonew','$nombre','$apellido','$contraseña','$dep','$telefono',0,0,0,0,0,0,0);"; 
                 $consulta=$this->con->query($sql);
                 $this->con->close();
                 return $consulta;
@@ -34,6 +34,25 @@
             $this->con->close();
             return $consulta;
         }
+
+        public function CrearCodigo($CodigoU, $correo)
+        {
+            $this->con=new Conexion();
+            $sql="UPDATE `trabajador` SET `Codigo_u`= '$CodigoU' WHERE `Correo`='$correo';";
+            $consulta=$this->con->query($sql);
+            $this->con->close();
+            return $consulta;
+        }
+
+        public function Pagosueldo($CodigoUs,$fecha,$hora,$noCheque,$valorcheque)
+        {
+            $this->con=new Conexion();
+            $sql="INSERT INTO `pago_de_sueldo`(`Trabajador_Usuario`, `Fecha`, `Hora`, `Cheque`, `ValordeCheque`) VALUES ('$CodigoUs','$fecha','$hora','$noCheque','$valorcheque');";
+            $consulta=$this->con->query($sql);
+            $this->con->close();
+            return $consulta;
+        }
+
 
 
     }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.38, created on 2021-07-07 21:52:57
+/* Smarty version 3.1.38, created on 2021-07-08 21:24:05
   from 'C:\wamp64\www\Tercer_Proyecto\View\Login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.38',
-  'unifunc' => 'content_60e62239182c46_40252355',
+  'unifunc' => 'content_60e76cf5c00546_69422133',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5892f8521ecc465abc8b3e2043f3d21dee53ceff' => 
     array (
       0 => 'C:\\wamp64\\www\\Tercer_Proyecto\\View\\Login.tpl',
-      1 => 1625659379,
+      1 => 1625779438,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:Cabeceras/Header.tpl' => 1,
   ),
 ),false)) {
-function content_60e62239182c46_40252355 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60e76cf5c00546_69422133 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:Cabeceras/Header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -46,14 +46,14 @@ $_smarty_tpl->_subTemplateRender("file:Cabeceras/Header.tpl", $_smarty_tpl->cach
 
     <div class="row" >
         <div class="input-field col s6 s2 row offset-s2 center aling" >
-          <input placeholder="DPI" id="DPI" type="DPI" class="validate" required="" name="DPI"/>
+          <input id="DPI" type="text" class="validate" name="DPI" required=""/>
           <label for="DPI">Usuario</label>
         </div>
     </div>
 
       <div class="row" class="center-align">
          <div class="input-field col s6 row offset-s2 center aling">
-             <input placeholder="Password" id="password" type="password" class="validate" required="" name="pass"/>
+             <input id="password" type="password" class="validate" name="pass" required=""/>
              <label for="password">Password</label>
             </div>
       </div>

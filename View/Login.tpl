@@ -21,14 +21,14 @@
 
     <div class="row" >
         <div class="input-field col s6 s2 row offset-s2 center aling" >
-          <input placeholder="DPI" id="DPI" type="DPI" class="validate" required="" name="DPI"/>
+          <input id="DPI" type="text" class="validate" name="DPI" required=""/>
           <label for="DPI">Usuario</label>
         </div>
     </div>
 
       <div class="row" class="center-align">
          <div class="input-field col s6 row offset-s2 center aling">
-             <input placeholder="Password" id="password" type="password" class="validate" required="" name="pass"/>
+             <input id="password" type="password" class="validate" name="pass" required=""/>
              <label for="password">Password</label>
             </div>
       </div>

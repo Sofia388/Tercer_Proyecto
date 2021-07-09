@@ -29,10 +29,10 @@
       $this->smarty->display('Registro.tpl');
     }
 
-    public function Regreso()
+    public function RegresoJefe()
     {
       $this->smarty->assign('title','Inicio');
-      $this->smarty->display('Home.tpl');
+      $this->smarty->display('VistaJefe.tpl');
     }
 
     public function Cerrar()
@@ -77,7 +77,7 @@
                 {  
             
                   $this->smarty->assign('title','Login');
-                  $this->smarty->display('Administrador.tpl');
+                  $this->smarty->display('VistaJefe.tpl');
                 }
             }
             else 
@@ -90,18 +90,60 @@
 
     public function GuardarUsuario()
       {
-        $email=$_POST['email'];
+        $correonew=$_POST['email'];
         $nombre=$_POST['nombre'];
         $apellido=$_POST['apellido'];
-        $pass=$_POST['pass'];
-        $fecha=$_POST['fecha'];
+        $contraseña=$_POST['pass'];
+        $dep=$_POST['depto'];
         $telefono=$_POST['cel'];
+        
 
-        $user=$this->user->GuardarUser(2, $email, $nombre, $apellido, $pass, $fecha, $telefono);
+        $user=$this->user->GuardarUser($correonew,$nombre,$apellido,$contraseña,$dep,$telefono,0,0,0,0,0,0,0);
 
         $this->smarty->assign('title','Login');
-        $this->smarty->display('Bienvenida.tpl');
+        $this->smarty->display('Login.tpl');
       }
+
+      public function CrearCodigo()
+      {
+        $CodigoU=$_POST['codPer'];
+        $correo=$_POST['correoUs'];
+
+        $user=$this->user->CrearCodigo($CodigoU, $correo);
+
+        $this->smarty->assign('title','Login');
+        $this->smarty->display('VistaJefe.tpl');
+      }
+
+      
+    public function Sueldo()
+    {
+      $this->smarty->assign('title','Sueldo');
+      $this->smarty->display('SueldoVista.tpl');
+    }
+
+    public function CodigoNew()
+    {
+      $this->smarty->assign('title','Login');
+      $this->smarty->display('CrearCodigo.tpl');
+
+    }
+
+    public function Pagosueldo()
+    {
+      $CodigoUs=$_POST['codigoUser'];
+      $fecha=$_POST['fechapago'];
+      $hora=$_POST['horapago'];
+      $noCheque=$_POST['nocheque'];
+      $valorcheque=$_POST['valcheque'];
+      
+      $userPago=$this->user->Pagosueldo($CodigoUs,$fecha,$hora,$noCheque,$valorcheque);
+
+      $this->smarty->assign('title','Login');
+      $this->smarty->display('SueldoVista.tpl');
+
+    }
+
 
   }
     
