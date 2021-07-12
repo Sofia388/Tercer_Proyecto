@@ -20,4 +20,14 @@
     <button class="btn waves-effect waves-light" type="submit" name="action">Ver</button>
   </form>
 
+  <form method="post" action="?controller=User&method=VerBenAd" class="col s12  center aling">
+    <h5>Ver Beneficio</h5>
+    <button class="btn waves-effect waves-light" type="submit" name="action">Ver</button>
+  </form>
+
+  <form method="post" action="?controller=User&method=HorasExtrasAd" class="col s12  center aling">
+    <h5>Ver Horas Extras</h5>
+    <button class="btn waves-effect waves-light" type="submit" name="action">Ver</button>
+  </form>
+
 {include file="Cabeceras/Footer.tpl"}

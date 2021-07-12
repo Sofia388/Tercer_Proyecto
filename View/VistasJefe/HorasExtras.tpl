@@ -2,28 +2,28 @@
 
   <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Bonificaciones</a>
+      <a href="#" class="brand-logo">Horas Extras</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="?controller=User&method=Cerrar">Cerrar</a></li>
         <li><a href="?controller=User&method=RegresoJefe">Regresar</a></li>
+        <li><a href="?controller=User&method=Cerrar">Cerrar</a></li>
       </ul>
     </div>
   </nav>
 
   
-  <form method="post" action="?controller=User&method=CrearBoni" class="col s12  center aling">
-    <h5>Crear Codigo Personal</h5>
+  <form method="post" action="?controller=User&method=CrearHorasExtras" class="col s12  center aling">
+    <h5>Pago de las Horas Extras</h5>
 
     <div class="row">
         <div class="input-field col s6 s2 row offset-s2">
-          <input id="codUsBoni" type="text" class="validate" name="codUsBoni" required=""/>
-          <label for="codUsBoni">Codigo del Usuario</label>
+          <input id="codUsHrs" type="text" class="validate" name="codUsHrs" required=""/>
+          <label for="codUsHrs">Codigo del Usuario</label>
         </div>
     </div>
 
     <div class="input-field col s6 s2 row offset-s2">
-     <input id="valboni" name="valboni" class="validate" requiered=""/>
-     <label for="valboni">Valor de la Bonificacion</label>
+     <input id="valHrs" type="text" name="valHrs" class="validate" requiered=""/>
+     <label for="valHrs">Valor del Horas Extras</label>
 
          <button class="btn waves-effect waves-light" type="submit" name="action">Enviar</button>
   </form>

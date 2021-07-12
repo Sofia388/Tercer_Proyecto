@@ -26,5 +26,21 @@
         <button class="btn waves-effect waves-light" type="submit" name="action">Ver</button>
     </form>
 
+    <form method="post" action="?controller=User&method=Beneficio" class="col s12  center aling">
+        <h5>Entrega de Beneficio</h5>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Ver</button>
+    </form>
+
+    <form method="post" action="?controller=User&method=Comisiones" class="col s12  center aling">
+        <h5>Pago de Comisiones</h5>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Ver</button>
+    </form>
+
+    <form method="post" action="?controller=User&method=HorasExtras" class="col s12  center aling">
+        <h5>Pago de Horas Extras</h5>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Ver</button>
+    </form>
+
+
 
 {include file="Cabeceras/Footer.tpl"}

@@ -101,6 +101,55 @@
       $this->smarty->display('VistasAdmon/DtpAdmon.tpl');
     }
 
+    public function Beneficio()
+    {
+      $this->smarty->assign('title','Beneficio');
+      $this->smarty->display('VistasJefe/Beneficio.tpl');
+    }
+
+    public function VerBenAd()
+    {
+      $this->smarty->assign('title','Beneficio');
+      $this->smarty->display('VistasAdmon/Beneficio.tpl');
+    }
+
+    public function VerBenVen()
+    {
+      $this->smarty->assign('title','Beneficio');
+      $this->smarty->display('VistasVentas/Beneficio.tpl');
+    }
+
+    public function Comisiones()
+    {
+      $this->smarty->assign('title','Comisiones');
+      $this->smarty->display('VistasJefe/Comisiones.tpl');
+    }
+
+    public function VerComi()
+    {
+      $this->smarty->assign('title','Comisiones');
+      $this->smarty->display('VistasVentas/Comisiones.tpl');
+    }
+
+    public function HorasExtras()
+    {
+      $this->smarty->assign('title','Horas Extras');
+      $this->smarty->display('VistasJefe/HorasExtras.tpl');
+    }
+
+    public function HorasExtrasAd()
+    {
+      $this->smarty->assign('title','Horas Extras');
+      $this->smarty->display('VistasAdmon/HorasExtras.tpl');
+    }
+
+    public function HorasExtrasVen()
+    {
+      $this->smarty->assign('title','Horas Extras');
+      $this->smarty->display('VistasVentas/HorasExtras.tpl');
+    }
+
+
     public function BuscarUsuario()
     {
       $numUs=$_POST['DPI'];
@@ -119,7 +168,7 @@
              if($usuario['Departamento_Depto']==1)
                 {
                   $this->smarty->assign('title','Login');
-                  $this->smarty->display('VistaVentas/SalaVentas.tpl');
+                  $this->smarty->display('VistasVentas/SalaVentas.tpl');
                 }
               else if($usuario['Departamento_Depto']==2)
                 {  
@@ -192,6 +241,42 @@
 
       $this->smarty->assign('title','Bonificación');
       $this->smarty->display('VistasJefe/CrearBoni.tpl');
+
+    }
+
+    public function CrearBeneficio()
+    {
+      $CodUsBen=$_POST['codUsBene'];
+      $ValBene=$_POST['valbene'];
+      $MotivoBene=$_POST['motivo'];
+      
+      $userBebe=$this->user->CrearBeneficio($CodUsBen,$ValBene,$MotivoBene);
+
+      $this->smarty->assign('title','Bonificación');
+      $this->smarty->display('VistasJefe/Beneficio.tpl');
+    }
+
+    public function CrearComision()
+    {
+      $CodUsBoni=$_POST['codUsComi'];
+      $ValBoni=$_POST['valcomi'];
+      
+      $userBebe=$this->user->CrearComision($CodUsBoni,$ValBoni);
+
+      $this->smarty->assign('title','Comisioes');
+      $this->smarty->display('VistasJefe/Comisiones.tpl');
+
+    }
+
+    public function CrearHorasExtras()
+    {
+      $CodUsHrsExtra=$_POST['codUsHrs'];
+      $ValHrsExtra=$_POST['valHrs'];
+      
+      $userBebe=$this->user->CrearHorasExtras($CodUsHrsExtra,$ValHrsExtra);
+
+      $this->smarty->assign('title','Comisioes');
+      $this->smarty->display('VistasJefe/HorasExtras.tpl');
 
     }
 

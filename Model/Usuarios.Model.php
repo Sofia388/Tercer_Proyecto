@@ -62,8 +62,32 @@
             return $consulta;
         }
 
+        public function CrearBeneficio($CodUsBen,$ValBene,$MotivoBene)
+        {
+            $this->con=new Conexion();
+            $sql="INSERT INTO `beneficio`(`Trabajador_Usuario`, `Valor_Beneficio`, `Productividad`) VALUES ('$CodUsBen','$ValBene','$MotivoBene');";
+            $consulta=$this->con->query($sql);
+            $this->con->close();
+            return $consulta;
+        }
 
+        public function CrearComision($CodUsBoni,$ValBoni)
+        {
+            $this->con=new Conexion();
+            $sql="INSERT INTO `comisiones`(`id_Codigo_u`, `Comisiones`) VALUES ('$CodUsBoni','$ValBoni');";
+            $consulta=$this->con->query($sql);
+            $this->con->close();
+            return $consulta;
+        }
 
+        public function CrearHorasExtras($CodUsHrsExtra,$ValHrsExtra)
+        {
+            $this->con=new Conexion();
+            $sql="INSERT INTO `horeasextras`(`id_Codigo_u`, `Total`) VALUES ('$CodUsHrsExtra','$ValHrsExtra');";
+            $consulta=$this->con->query($sql);
+            $this->con->close();
+            return $consulta;
+        }
     }
 
 ?>
