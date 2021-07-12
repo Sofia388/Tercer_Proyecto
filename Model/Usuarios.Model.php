@@ -53,6 +53,15 @@
             return $consulta;
         }
 
+        public function CrearBoni($CodUs,$ValBoni)
+        {
+            $this->con=new Conexion();
+            $sql="INSERT INTO `bonificaciondevengados`(`id_Codigo_u`, `BonificacionDevengados`) VALUES ('$CodUs','$ValBoni');";
+            $consulta=$this->con->query($sql);
+            $this->con->close();
+            return $consulta;
+        }
+
 
 
     }

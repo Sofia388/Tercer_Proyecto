@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.38, created on 2021-07-12 01:15:43
-  from 'C:\wamp64\www\Tercer_Proyecto\View\SueldoVista.tpl' */
+/* Smarty version 3.1.38, created on 2021-07-12 01:25:27
+  from 'C:\wamp64\www\Tercer_Proyecto\View\VistasJefe\SueldoVista.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.38',
-  'unifunc' => 'content_60eb97bf27aea6_61337084',
+  'unifunc' => 'content_60eb9a07a710b8_45710159',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '53e0938a36d30b8376a67d10448182ff02e01b54' => 
+    'a824e0172b847f6d2d60263902ad23842c010d89' => 
     array (
-      0 => 'C:\\wamp64\\www\\Tercer_Proyecto\\View\\SueldoVista.tpl',
-      1 => 1626051174,
+      0 => 'C:\\wamp64\\www\\Tercer_Proyecto\\View\\VistasJefe\\SueldoVista.tpl',
+      1 => 1626052841,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:Cabeceras/Footer.tpl' => 1,
   ),
 ),false)) {
-function content_60eb97bf27aea6_61337084 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60eb9a07a710b8_45710159 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:Cabeceras/Header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
     
