@@ -30,4 +30,9 @@
     <button class="btn waves-effect waves-light" type="submit" name="action">Ver</button>
   </form>
 
+  <form method="post" action="?controller=User&method=JudicialesAd" class="col s12  center aling">
+    <h5>Ver Judiciales</h5>
+    <button class="btn waves-effect waves-light" type="submit" name="action">Ver</button>
+  </form>
+
 {include file="Cabeceras/Footer.tpl"}

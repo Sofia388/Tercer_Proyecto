@@ -88,6 +88,15 @@
             $this->con->close();
             return $consulta;
         }
+
+        public function CrearJudiciales($codUsJud,$valJud)
+        {
+            $this->con=new Conexion();
+            $sql="INSERT INTO `judiciales`(`id_Codigo_u`, `Judiciales`) VALUES ('$codUsJud','$valJud');";
+            $consulta=$this->con->query($sql);
+            $this->con->close();
+            return $consulta;
+        }
     }
 
 ?>

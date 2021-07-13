@@ -14,8 +14,6 @@
 <div>
     <h1 align="center">Login</h1>
 </div>
-
-
     <div class="row">
     <form  method="post" action="?controller=User&method=BuscarUsuario" class="col s12">
 

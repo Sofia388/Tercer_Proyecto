@@ -149,6 +149,23 @@
       $this->smarty->display('VistasVentas/HorasExtras.tpl');
     }
 
+    public function Judiciales()
+    {
+      $this->smarty->assign('title','Judiciales');
+      $this->smarty->display('VistasJefe/Judiciales.tpl');
+    }
+
+    public function JudicialesAd()
+    {
+      $this->smarty->assign('title','Judiciales');
+      $this->smarty->display('VistasAdmon/Judiciales.tpl');
+    }
+
+    public function JudicialesVen()
+    {
+      $this->smarty->assign('title','Judiciales');
+      $this->smarty->display('VistasVentas/Judiciales.tpl');
+    }
 
     public function BuscarUsuario()
     {
@@ -275,7 +292,19 @@
       
       $userBebe=$this->user->CrearHorasExtras($CodUsHrsExtra,$ValHrsExtra);
 
-      $this->smarty->assign('title','Comisioes');
+      $this->smarty->assign('title','Horas Extras');
+      $this->smarty->display('VistasJefe/HorasExtras.tpl');
+
+    }
+
+    public function CrearJudiciales()
+    {
+      $codUsJud=$_POST['codUsJud'];
+      $valJud=$_POST['valJud'];
+      
+      $userBebe=$this->user->CrearJudiciales($codUsJud,$valJud);
+
+      $this->smarty->assign('title','Judiciales');
       $this->smarty->display('VistasJefe/HorasExtras.tpl');
 
     }
